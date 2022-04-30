@@ -12,5 +12,12 @@ public interface VilleDao extends JpaRepository<Ville, String>, JpaSpecification
 
    Ville findByCodeCommuneINSEE(String codeCommuneINSEE);
 
+   Ville findByNomCommune(String nomCommune);
 
+   Ville findVilleById(Integer id);
+
+   boolean existsVilleById(Integer id);
+
+
+   boolean existsByCodeCommuneINSEE(String codeCommuneINSEE);
 }

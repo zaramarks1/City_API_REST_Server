@@ -19,6 +19,10 @@ public class Ville implements Serializable {
 
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
+    private Integer id;
+
     @Column(name = "Code_commune_INSEE", nullable = false)
     private String codeCommuneINSEE;
 
