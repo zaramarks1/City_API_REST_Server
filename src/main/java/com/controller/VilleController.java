@@ -1,8 +1,6 @@
 package com.controller;
 
 import com.entity.Ville;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import com.model.VilleModelAdd;
 import com.model.VilleModelModifier;
@@ -14,6 +12,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.SQLException;
+
+
 
 @RestController
 @RequestMapping("/ville")
@@ -28,10 +28,7 @@ public class VilleController {
 	// fonction pour récupérer le contenu de la BDD
 	@CrossOrigin(origins = "http://localhost:8080")
 	@GetMapping(value = "/all", produces = MediaType.APPLICATION_JSON_VALUE)
-	public String getAll() throws JsonProcessingException {
-
-		//gson.toJson(villeService.getAll())
-		ObjectMapper mapper = new ObjectMapper();
+	public String getAll()  {
 
 		return gson.toJson(villeService.getAll());
 	}
@@ -39,7 +36,6 @@ public class VilleController {
 	@GetMapping("/{code}/code")
 	@CrossOrigin(origins = "http://localhost:8080")
 		public String getByCode(@PathVariable("code") String code ) {
-			System.out.println(code);
 			return gson.toJson(villeService.getByCode(code));
 		}
 
@@ -73,7 +69,7 @@ public class VilleController {
 
 	@CrossOrigin(origins = "http://localhost:8080")
 	@DeleteMapping
-	public void delete(@RequestBody String id) throws  ObjectNotFoundException {
+	public void delete(@RequestBody String id)  {
 
 		villeService.delete(id);
 
@@ -81,7 +77,7 @@ public class VilleController {
 
 	@CrossOrigin(origins = "http://localhost:8080")
 	@DeleteMapping("/{id}")
-	public void deletePath(@PathVariable("id") String id) throws  ObjectNotFoundException {
+	public void deletePath(@PathVariable("id") String id)  {
 
 		villeService.delete(id);
 

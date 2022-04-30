@@ -75,13 +75,7 @@
 			<scope>runtime</scope>
 		</dependency>
 
-		<!-- Optionnel : Permet d'avoir des métriques Spring Boot -->
-		<!-- 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-actuator</artifactId>
-		</dependency>
-		 -->
+
 	</dependencies>
 
 	<build>

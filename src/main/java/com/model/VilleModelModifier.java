@@ -29,19 +29,6 @@ public class VilleModelModifier {
 
     private String longitude;
 
-    public Ville villeModelToVilleAdd(){
-        Ville ville = new Ville();
-
-        ville.setCodeCommuneINSEE(this.codeCommuneINSEE);
-        ville.setCodePostal( this.codePostal);
-        ville.setLibelleAcheminement(this.libelleAcheminement);
-        ville.setLigne5( this.ligne5 );
-        ville.setLatitude(this.latitude);
-        ville.setLongitude(this.longitude);
-        ville.setNomCommune(this.nomCommune);
-
-        return ville;
-    }
 
     public Ville villeModelToVilleModifier(){
         Ville ville = new Ville();
