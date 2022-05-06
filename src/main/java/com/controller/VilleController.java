@@ -42,7 +42,7 @@ public class VilleController {
 	@GetMapping("/{id}")
 	@CrossOrigin(origins = "http://localhost:8080")
 	public String getById(@PathVariable("id") String id ) {
-
+		System.out.println("errou");
 		return gson.toJson(villeService.getById(id));
 	}
 
@@ -82,6 +82,15 @@ public class VilleController {
 		villeService.delete(id);
 
 	}
+
+	@CrossOrigin(origins = "http://localhost:8080")
+	@GetMapping("/search/{condition}/{response}")
+	public String search(@PathVariable("condition") String condition, @PathVariable("response") String response ) throws ObjectNotFoundException {
+
+		System.out.println(condition + " "+response);
+		return gson.toJson(villeService.search(condition, response));
+	}
+
 
 	
 

@@ -64,4 +64,12 @@ public class VilleService {
              this.villeDao.delete(ville);
         }
     }
+
+    public  List<Ville> search(String condition, String response) throws ObjectNotFoundException {
+
+        List<Ville> villes = this.villeDao.searchMethod(condition, response);
+
+        return villes;
+
+    }
 }

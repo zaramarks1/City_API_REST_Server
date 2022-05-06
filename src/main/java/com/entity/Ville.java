@@ -23,7 +23,7 @@ public class Ville implements Serializable {
     @Column(name = "id", nullable = false)
     private Integer id;
 
-    @Column(name = "Code_commune_INSEE", nullable = false)
+    @Column(name = "Code_commune_INSEE", nullable = false, unique = true)
     private String codeCommuneINSEE;
 
     @Column(name = "Nom_commune", nullable = false)
